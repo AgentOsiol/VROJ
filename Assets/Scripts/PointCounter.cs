@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class PointCounter : MonoBehaviour
 {
-    public int points = 0;
+    public int Points = 0;
 
     GameObject Basketball;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Points = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-  
-    }
-    private void OnTriggerEnter(GameObject Basketball)
-    {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Basketball")
+        {
+            Points += 1;
+        }
+    }
+    
 }
